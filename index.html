@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性操作-模拟短信发送内容保留</title>
+	<style>
+		#con {
+			width: 240px;
+			height: 200px;
+			background-color: #f1f1f1;
+			padding: 10px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+	</style>
+	<script>
+		window.onload =function(){
+			// alert('123');测试js是否正常
+			var con = document.getElementById('con');
+			var txt = document.getElementById('txt');
+			var btn = document.getElementById('btn');
+			var oSpan = document.getElementById('oSpan');
+			btn.onclick = function(){				
+				//con.innerHTML = con.innerHTML + txt.value + '</br>';//内容换行显示				
+				con.innerHTML = con.innerHTML + oSpan.innerHTML + txt.value + '</br>';//内容显示前面文字换行显示，顺序不要颠倒	
+				// con.innerHTML = con.innerHTML + txt.value;//发送文字紧挨着拼接				
+				txt.value = '';//内容发送后清空value值
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="con"></div>
+	<span id="oSpan">小明：</span>
+	<input type="text" id="txt">
+	<input type="button" value="提交" id="btn">
+</body>
+</html>
